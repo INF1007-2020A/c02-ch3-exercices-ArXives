@@ -21,22 +21,29 @@ def average(values):
 	sum = 0
 	num_values = 0
 	for v in values:
-
-		pass # La variable v contient une valeur de la liste.
+		if v >= 0:
+			sum += v
+			num_values +=1
+		return sum / num_values
+	# La variable v contient une valeur de la liste.
 
 def bills(value):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur.
+	twenties = tens = fives = ones = 0
 	while value != 0:
 		if value >= 20:
-			pass
+			twenties = value // 20
+			value %= 20
 		elif value >= 10:
-			pass
+			tens = value // 10
+			value %= 10
 		elif value >= 5:
-			pass
+			fives = value // 5
+			value %= 5
 		elif value >= 1:
-			pass
-
-	return (twenties, tens, fives, twos, ones);
+			ones = value // 1
+			value %= 1
+	return (twenties, tens, fives, ones)
 
 if __name__ == "__main__":
 	#print(dissipated_power(69, 420))
